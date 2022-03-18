@@ -2,29 +2,25 @@
 using namespace std;
 
 int findMissingNumber(int A[], int sizeOfArray) {
-    //implement your code here
-    int key = 1;
-    for(int i=0; i<sizeOfArray; i++) {
-        for(key=1; key<=sizeOfArray; key++) {
-            if(A[i] == key) {
-                continue;
-            }
-            else {
-                break;
-            }
-        }
+    int sumOfAll = (sizeOfArray*(sizeOfArray+1))/2;
+
+    int sumOfInput = 0;
+    for(int i = 0; i<sizeOfArray-1; i++) {
+        sumOfInput += A[i];
     }
-    return key;
+
+    return (sumOfAll - sumOfInput);
+    
 }
 
 int main() {
     int n;
-    int Array[] = {0};
     cout<<"Enter the size of the Array: ";
     cin>>n;
     
+    int Array[n-1];
     cout<<"Enter the array elements: "<<endl;
-    for(int i=0; i<n; i++) {
+    for(int i=0; i<n-1; i++) {
         cin >> Array[i];
     }
 
