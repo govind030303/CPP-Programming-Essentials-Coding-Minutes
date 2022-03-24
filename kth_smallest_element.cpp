@@ -2,12 +2,6 @@
 using namespace std;
 
 
-
-int kthSmallest(int A[], int k, int sizeOfArray) {
-    //implement your code here
-    
-}
-
 void bubble_sort(int Array[], int size) {
 
     for(int i = 0; i<size; i++) {
@@ -19,8 +13,16 @@ void bubble_sort(int Array[], int size) {
     }
 }
 
+int kthSmallest(int A[], int k, int sizeOfArray) {
+    
+    bubble_sort(A, sizeOfArray);
+
+    return A[k-1];
+}
+
+
 int main() {
-    int size;
+    int size, k;
     cout << "Enter the number of elements: ";
     cin >> size;
 
@@ -31,7 +33,9 @@ int main() {
         cin >> Array[i];
     }
 
-    bubble_sort(Array, size);
+    cout << "Enter the value of k : ";
+    cin >> k;
 
+    cout << "The kth smallest element is: " << kthSmallest(Array, k, size);
     
 }
