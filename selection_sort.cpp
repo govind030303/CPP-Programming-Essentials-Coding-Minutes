@@ -7,7 +7,7 @@ void selection_sort(int Array[], int size) {
     for(int pos=0; pos<size-1; pos++) {
         int min = pos;
         for(int i = pos; i<size; i++) {
-            if(Array[i] < Array[pos]) {
+            if(Array[i] < Array[min]) {
                 min = i;
             } 
         }
