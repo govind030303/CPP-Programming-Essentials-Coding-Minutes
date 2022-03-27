@@ -12,7 +12,6 @@ void selection_sort(int Array[], int size) {
             } 
         }
         swap(Array[min], Array[pos]);
-        
     }
 }
 
