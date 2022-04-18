@@ -1,13 +1,15 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
-int frequencyOfLargestElement (int A[], int size) {
+int frequencyOfLargestElement (vector<int> array) {
 
-    int largest = A[size-1];
+    int array_size = array.size();
+    int largest = array[array_size-1];
     int count = 0;
 
-    for(int i=0; i<size; i++) {
-        if(A[i] == largest) {
+    for(int i=0; i<array_size; i++) {
+        if(array[i] == largest) {
             count++;
         }
     }
@@ -16,15 +18,16 @@ int frequencyOfLargestElement (int A[], int size) {
 
 int main() {
     int size;
+    vector<int> array;
+    int elements;
     cout << "Enter the size of array: ";
     cin >> size;
 
-    int Array[size];
-
     cout << "Enter the sorted array: ";
     for(int i = 0; i < size; i++) {
-        cin  >> Array[i];
+        cin >> elements;
+        array.push_back(elements);
     }
 
-    cout << "The frequency of the largest element is: " << frequencyOfLargestElement(Array, size);
+    cout << "The frequency of the largest element is: " << frequencyOfLargestElement(array);
 }
